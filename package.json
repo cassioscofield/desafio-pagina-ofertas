@@ -1,0 +1,21 @@
+{
+	"name": "desafio-pagina-ofertas",
+	"version": "1.0.0",
+    "private": false,
+	"scripts": {
+		"start": "node app.js",
+        "test": ""
+    },
+	"dependencies": {
+		"body-parser": ">= 1.8.x",
+		"express": ">= 3.4.x"
+	},
+    "devDependencies": {
+        "bower": "^1.7.7",
+        "mocha": "^1.0.0"
+    },
+	"repository": {},
+	"engines": {
+		"node": "4.2.x"
+	}
+}
