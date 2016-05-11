@@ -1,0 +1,101 @@
+.carousel-custom {
+	height : 300px;
+	float: left;
+	display: block;
+	width: 100%;
+	margin-bottom: 100px;
+	margin-top : 40px;
+}
+
+.form-filter .form-group {
+	margin-top: 20px;
+    color: #666;
+    font-size: 12px;
+}
+
+.form-filter .form-group label {
+    font-weight: normal;
+    padding: 5px;
+}
+
+.header-filtro {
+	border-bottom: solid 1px #dedede;
+    padding: 10px;
+}
+
+.header-filtro-title {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.options-money {
+    font-weight: bold;
+}
+
+.options-price {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.option-rules {
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.option-rules-orange {
+    color: #FF7500
+}
+
+.option-rules-green {
+    color: limegreen;
+}
+
+.option-icon {
+    padding: 10px;
+}
+
+.option {
+    height: auto;
+    margin-top: 20px;
+    border: #DDD;
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+}
+
+.option>div {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    min-height: 180px;
+}
+
+.option-main {
+    border: #DDD;
+    border-width: 0px 1px 0px 0px;
+    border-style: solid;
+}
+
+.option-from {
+    border: #DDD;
+    border-width: 0px 1px 0px 0px;
+    border-style: solid;
+}
+
+.option-details {
+    border: #DDD;
+    border-width: 0px 1px 0px 0px;
+    border-style: solid;
+}
+
+.option.active {
+    border: #FF7500;
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+}
+
+.btn-quero-ir {
+    margin-top: 15px;
+}
+
+.main {
+    padding: 20px;
+}

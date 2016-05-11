@@ -1,1 +1,108 @@
-Test
+<html>
+	<head>
+        
+		<meta charset='utf-8'>
+		<title>Desafio página ofertas</title>
+		
+        <!-- jQuery -->
+        <script src="./lib/jquery/1.12.2/jquery.min.js"></script>
+        
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="./lib/bootstrap/3.3.6/css/bootstrap.min.css">
+		<script src="./lib/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        
+        <!-- Custom default css -->
+		<link rel="stylesheet" href="./css/default.css"></link>
+        
+        <!-- Caousel custom -->
+		<link rel="stylesheet" href="./css/carousel-custom.css"></link>
+		<script src="./js/component-carousel-custom.js"></script>
+        
+        <!-- Page script -->
+		<link rel="stylesheet" href="./css/home.css"></link>
+		<script src="./js/controller-home.js"></script>
+        
+	</head>
+	<body>
+		<div class="container theme-showcase" role="main">
+            <div class="header">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 id="title">Hotel The Mirage (Hotel & Casino)</h1>
+                        <p class="sub-title">
+                            <strong id="location">Las Vegas, USA</strong><br>
+                            <span id="description">Aéreo de várias cidades + Hotel em Vegas</span>
+                        </p>
+                    </div>
+                </div>
+                <div id="myCarousel" class="carousel-custom" ></div>		
+                <div class="row header-filtro">
+                    <div class="col-md-6 text-uppercase">
+                        <h3 class="header-filtro-title">Escolha sua melhor opção</h3>
+                    </div>
+                    <form class="form-inline form-filter">
+                        <div class="form-group col-md-3 text-right">
+                            <label for="inputFrom" class="text-uppercase">Saídas</label>
+                            <select name="inputFrom" class="form-control">
+                                <option>São Paulo</option>
+                                <option>Rio de Janeiro</option>
+                                <option>Salvador</option>
+                                <option>Manaus</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-3 text-right">
+                            <label for="inputDiary" class="text-uppercase">N de  diárias</label>
+                            <select name="inputDiary" class="form-control">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="main">
+                <div class="option row active">
+                    <div class="option-main col-md-5">
+                        <h4 class="option-title">
+                            Noites em Vegas e Albuquerque
+                        </h4>
+                        <p class="option-title">
+                            Atenção, quarto duplo é necessário adquirir 2 pacotes
+                        </p>
+                    </div>
+                    <div class="option-from col-md-2">
+                        <h4>Saídas:</h4>
+                        <p>Manaus</p>
+                    </div>
+                    <div class="option-details text-center col-md-2">
+                        <span>
+                            3
+                            <span class="option-icon glyphicon glyphicon-adjust" aria-hidden="true"></span>
+                        </span>
+                        <div>Diárias</div>
+                        <div>-</div>
+                        <span>
+                            1
+                            <span class="option-icon glyphicon glyphicon-user" aria-hidden="true"></span>
+                        </span>
+                        <div>Pessoa</div>
+                    </div>
+                    <div class="option-final text-center col-md-3">
+                        <h4 class="option-rules option-rules-green">$ Cancelamento grátis</h4>
+                        <div>Por Apenas:</div>
+                        <div><span class="options-money">R$</span><span class="options-price">2.380</span></div>
+                        <span>+ taxas em até 10x</span>
+                        <div class="btn-quero-ir">
+                            <button class="btn btn-primary">QUERO IR</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+		
+	</body>
+</html>
+
