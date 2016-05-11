@@ -1,4 +1,4 @@
-var offersDao = require('../dao/offersDao');
+var offersDao = require('./offersDao');
 
 /**
  * 

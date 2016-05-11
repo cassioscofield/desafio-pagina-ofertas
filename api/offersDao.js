@@ -44,8 +44,6 @@ function filterOptions(options, offer) {
         // Filter by from and daily
         filteredOffer.options = [];
         for (var j=0;offer.options && j<offer.options.length;j++) {
-            console.log('\noffer.options[j].from', offer.options[j].from);
-            console.log('\noffer.options[j].daily', offer.options[j].daily);
             if (offer.options[j].from && offer.options[j].from.length && offer.options[j].from.indexOf(options.from.toString()) > -1 && offer.options[j].daily === Number(options.daily)) {
                 filteredOffer.options.push(offer.options[j]);
             }
