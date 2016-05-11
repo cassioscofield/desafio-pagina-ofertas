@@ -1,29 +1,37 @@
 (function($public, $private){
 				
 	$private.renderCarouselInner = function(seletorContainer, imgList) {
+        var i, img, active, item;
 		for(var i = 0; i < imgList.length; i++){
-			var img = imgList[i];
-			var active = i === 0 ? 'active' : '';
-			var item = ['<div class="item ' + active + '">',
-							'<img src="' + img.src + '"   />',
-						'</div>'].join('');
+			img = imgList[i];
+			active = i === 0 ? 'active' : '';
+			item = [
+                '<div class="item ' + active + '">',
+                '<img src="' + img + '"   />',
+                '</div>'
+            ].join('');
 			$(seletorContainer).find('.carousel-inner').append(item);
 		}
 	};
 	
 	$private.renderIndicators = function(seletorContainer, imgList){
-		for(var i = 0; i < imgList.length; i++){
-			var img = imgList[i];			
-			var active = img.active === true ? 'active' : ''; 
-			if(i === 8){
-				var item = ['<li data-target="' + seletorContainer + '" class="item-size" data-slide-to="' + (i) + '" >',
-							'<div class="row">+' + (imgList.length - i) + '</div>',
-						'</li>'].join('');
+        var i, item, img, active;
+		for(i = 0; i < imgList.length; i++){
+			img = imgList[i];			
+			active = i === 0 ? 'active' : ''; 
+			if (i === 8){
+				item = [
+                    '<li data-target="' + seletorContainer + '" class="item-size" data-slide-to="' + i + '" >',
+                    '<div class="row">+' + (imgList.length - i) + '</div>',
+                    '</li>'
+                ].join('');
 				$(seletorContainer).find('.carousel-indicators').append(item);
 			}
-			var item = ['<li data-target="' + seletorContainer + '" data-slide-to="' + i + '"  class="' + active + '">',
-							'<img src="' + img.src + '"   />',
-						'</li>'].join('');
+			item = [
+                '<li data-target="' + seletorContainer + '" data-slide-to="' + i + '"  class="' + active + '">',
+                '<img src="' + img + '"   />',
+                '</li>'
+            ].join('');
 			$(seletorContainer).find('.carousel-indicators').append(item);
 		}
 	};
@@ -39,9 +47,12 @@
 	
 	
 	$private.addControl = function(seletorContainer, position, action) {
-        var seta = ['<a class="' + position + ' carousel-control" href="' + seletorContainer + '" role="button" data-slide="' + action + '">',
+        var seta;
+        seta = [
+            '<a class="' + position + ' carousel-control" href="' + seletorContainer + '" role="button" data-slide="' + action + '">',
             '<span class="glyphicon glyphicon-chevron-' + position + '" aria-hidden="true"></span>',
-            '</a>'].join('');
+            '</a>'
+        ].join('');
 		$(seletorContainer).append(seta); 
 	};
 	

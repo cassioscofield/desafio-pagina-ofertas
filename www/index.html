@@ -18,9 +18,14 @@
 		<link rel="stylesheet" href="./css/carousel-custom.css"></link>
 		<script src="./js/component-carousel-custom.js"></script>
         
+        <!-- Helper methods -->
+        <script src="./js/helper-template.js"></script>
+        <script src="./js/helper-currency.js"></script>
+        <script src="./js/helper-url.js"></script>
+        
         <!-- Page script -->
-		<link rel="stylesheet" href="./css/home.css"></link>
-		<script src="./js/controller-home.js"></script>
+		<link rel="stylesheet" href="./css/offer.css"></link>
+		<script src="./js/controller-offer.js"></script>
         
 	</head>
 	<body>
@@ -28,22 +33,23 @@
             <div class="header">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 id="title">Hotel The Mirage (Hotel & Casino)</h1>
+                        <h1 id="title"></h1>
                         <p class="sub-title">
-                            <strong id="location">Las Vegas, USA</strong><br>
-                            <span id="description">Aéreo de várias cidades + Hotel em Vegas</span>
+                            <strong id="location"></strong><br>
+                            <span id="description"></span>
                         </p>
                     </div>
                 </div>
-                <div id="myCarousel" class="carousel-custom" ></div>		
+                <div id="header-carousel" class="carousel-custom" ></div>		
                 <div class="row header-filtro">
-                    <div class="col-md-6 text-uppercase">
+                    <div class="col-md-5 text-uppercase">
                         <h3 class="header-filtro-title">Escolha sua melhor opção</h3>
                     </div>
                     <form class="form-inline form-filter">
-                        <div class="form-group col-md-3 text-right">
-                            <label for="inputFrom" class="text-uppercase">Saídas</label>
-                            <select name="inputFrom" class="form-control">
+                        <div class="form-group col-md-4 text-right">
+                            <label for="input-from" class="text-uppercase">Saídas</label>
+                            <select id="input-from" name="inputFrom" class="form-control">
+                                <option></option>
                                 <option>São Paulo</option>
                                 <option>Rio de Janeiro</option>
                                 <option>Salvador</option>
@@ -51,35 +57,35 @@
                             </select>
                         </div>
                         <div class="form-group col-md-3 text-right">
-                            <label for="inputDiary" class="text-uppercase">N de  diárias</label>
-                            <select name="inputDiary" class="form-control">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
+                            <label for="input-diary" class="text-uppercase">N de  diárias</label>
+                            <select id="input-diary" name="inputDiary" class="form-control">
+                                <option></option>
                             </select>
                         </div>
                     </form>
                 </div>
             </div>
-            <div class="main">
-                <div class="option row active">
+            <div class="main" id="options-container">
+                
+            </div>
+		</div>
+		<script type="template/javascript" id="options-template">
+               <div class="option row {{active}}">
                     <div class="option-main col-md-5">
                         <h4 class="option-title">
-                            Noites em Vegas e Albuquerque
+                            {{title}}
                         </h4>
-                        <p class="option-title">
-                            Atenção, quarto duplo é necessário adquirir 2 pacotes
+                        <p class="option-description">
+                            {{description}}
                         </p>
                     </div>
                     <div class="option-from col-md-2">
                         <h4>Saídas:</h4>
-                        <p>Manaus</p>
+                        <p>{{fromList}}</p>
                     </div>
                     <div class="option-details text-center col-md-2">
                         <span>
-                            3
+                            {{daily}}
                             <span class="option-icon glyphicon glyphicon-adjust" aria-hidden="true"></span>
                         </span>
                         <div>Diárias</div>
@@ -91,18 +97,16 @@
                         <div>Pessoa</div>
                     </div>
                     <div class="option-final text-center col-md-3">
-                        <h4 class="option-rules option-rules-green">$ Cancelamento grátis</h4>
+                        <h4 class="option-rules option-rules-green">$ {{rule}}</h4>
                         <div>Por Apenas:</div>
-                        <div><span class="options-money">R$</span><span class="options-price">2.380</span></div>
+                        <div><span class="options-money">R$</span><span class="options-price">{{price}}</span></div>
                         <span>+ taxas em até 10x</span>
                         <div class="btn-quero-ir">
                             <button class="btn btn-primary">QUERO IR</button>
                         </div>
                     </div>
                 </div>
-            </div>
-		</div>
-		
+        </script>
 	</body>
 </html>
 
