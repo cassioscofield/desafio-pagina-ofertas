@@ -17,8 +17,8 @@ function parseOffers(options, callback) {
         fs.readFile('offer.txt', 'utf8', function (err, data) {
             if (err) {
                 callback(err);
+                return;
             }
-            global.ofertas = JSON.parse(data);
             callback(null, JSON.parse(data));
         }); 
     }
@@ -37,8 +37,6 @@ function filterOptions(options, offer) {
     
     // Cloning offer
     var filteredOffer = JSON.parse(JSON.stringify(offer));
-    
-    console.log('options', options);
     
     if (options && options.from && options.daily) {
         // Filter by from and daily
@@ -84,20 +82,19 @@ function retrieveOne(options, callback) {
     parseOffers(options, function (err, data) {
         if (err) {
             callback(err, null);
+            return;
         } else if (data) {
             for (var i=0;i<data.length;i++) {
                 if (options && options.id) {
                     if (data[i].id.toString() === options.id) {
                         callback(null, filterOptions(options, data[i]));
+                        return;
                     }
-                } else {
-                    callback(null, data[i]);
-                    return;
-                }
+                } 
             }
-        } else {
-            callback(null, null);
         }
+        
+        callback(null, null);
     });
     
 }

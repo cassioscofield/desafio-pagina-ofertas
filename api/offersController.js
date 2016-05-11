@@ -18,7 +18,7 @@ function find(req, res) {
         if (err) {
             res.status(500).send({ code: 'ERROR', message: 'Could not find offers', detail: err })
         } else {
-            res.json(data);
+            res.status(200).send(data);
         }
     });
 }
@@ -44,9 +44,9 @@ function findById(req, res) {
             res.status(500).send({ code: 'ERROR', message: 'Could not find offers', detail: err })
         } else {
             if (data) {
-                res.json(data);
+                res.status(200).send(data);
             } else {
-                res.status(500).send({ code: 'NOT_FOUND', message: 'Could not find offer with the given id', detail: err })
+                res.status(404).send({ code: 'NOT_FOUND', message: 'Could not find offer with the given id', detail: err })
             }
         }
     });
