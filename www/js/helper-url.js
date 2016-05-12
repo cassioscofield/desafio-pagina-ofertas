@@ -1,7 +1,7 @@
 (function($public){
  
     $public.UrlHelper = {     
-        getQueryString: function (field, url) {	
+        getQueryString: function (field, url) {
             var href, reg, param;
             href = url ? url : window.location.href;
             reg = new RegExp( '[?&]' + field + '=([^&#]*)', 'i' );

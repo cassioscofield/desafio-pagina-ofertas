@@ -4,7 +4,9 @@
     "private": false,
 	"scripts": {
 		"start": "node app.js",
-        "test": "node node_modules/mocha/bin/mocha api-tests/*tests.js"
+        "test-api": "node node_modules/mocha/bin/mocha api-tests/*tests.js",
+        "test-www": "node node_modules/mocha/bin/mocha www-tests/*tests.js",
+        "test": "npm run test-api && npm run test-www"
     },
 	"dependencies": {
 		"body-parser": "1.15.1",

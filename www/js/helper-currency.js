@@ -1,4 +1,4 @@
-(function($public, $private){
+(function($public){
  
     $public.CurrencyHelper = {     
         parseFloatToCurrency: function (num) {	

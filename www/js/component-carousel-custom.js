@@ -44,8 +44,6 @@
 			.append('<div class="carousel-inner" role="listbox">');
 	};
 	
-	
-	
 	$private.addControl = function(seletorContainer, position, action) {
         var seta;
         seta = [

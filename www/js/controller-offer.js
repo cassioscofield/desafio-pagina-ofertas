@@ -1,18 +1,18 @@
 (function($public, $private) {
 	
     $private.SELECTOR_INPUT_FROM = '#input-from';
-    $private.SELECTOR_INPUT_DIARY = '#input-diary';
+    $private.SELECTOR_INPUT_DAILY = '#input-daily';
     $private.SELECTOR_TEMPLATE_OPTIONS = '#options-template';
     $private.SELECTOR_OPTIONS_CONTAINER = '#options-container';
     
     $private.offerId = UrlHelper.getQueryString('id') || 0;
     $private.from = null;
-    $private.diary = null;
+    $private.daily = null;
     
 	$private.initLayout = function () {
 		$(function(){
             $private.initEventsInputFrom();
-            $private.initEventsInputDiary();
+            $private.initEventsInputDaily();
             $private.initData({}, function (err, data) {
                 $private.initHeader(data);
                 $private.initFilter(data);
@@ -29,8 +29,8 @@
 	};
 	
     $private.initFilter = function (data) {
-        $('#input-diary').empty();
-        $('#input-from').empty();
+        $($private.SELECTOR_INPUT_DAILY).empty();
+        $($private.SELECTOR_INPUT_FROM).empty();
         var i, j, dairyOptions, fromOptions;
         dairyOptions = [];
         fromOptions = [];
@@ -45,24 +45,24 @@
             }
         }
         dairyOptions.sort(function(a, b){return a-b});
+        $($private.SELECTOR_INPUT_DAILY).append('<option></option>');
         for (i = 0; i<dairyOptions.length;i++) {
-            $('#input-diary').append('<option>' + dairyOptions[i] + '</option>');
+            $($private.SELECTOR_INPUT_DAILY).append('<option>' + dairyOptions[i] + '</option>');
         }
         fromOptions.sort();
+        $($private.SELECTOR_INPUT_FROM).append('<option></option>');
         for (i = 0; i<fromOptions.length;i++) {
-            $('#input-from').append('<option>' + fromOptions[i] + '</option>');
+            $($private.SELECTOR_INPUT_FROM).append('<option>' + fromOptions[i] + '</option>');
         }
     };
     
     $private.initEventsInputFrom = function () {
-        console.log('initEventsInputFrom');
         $($private.SELECTOR_INPUT_FROM).on('change', function () {
-            $private.from = $(this).val();
-            console.log('from', $private.from);
+            $private.from = $($private.SELECTOR_INPUT_FROM).val();
             $private.findOptions({
                 offerId: $private.offerId,
                 from: $($private.SELECTOR_INPUT_FROM).val(),
-                daily: $($private.SELECTOR_INPUT_DIARY).val()
+                daily: $($private.SELECTOR_INPUT_DAILY).val()
             }, function (err, data) {
                 if (err) {
                     alert(err);
@@ -73,15 +73,13 @@
         });
     };
     
-    $private.initEventsInputDiary = function () {
-        console.log('initEventsInputDiary');
-        $($private.SELECTOR_INPUT_DIARY).on('change', function () {
-            $private.diary = $(this).val();
-            console.log('diary', $private.diary);
+    $private.initEventsInputDaily = function () {
+        $($private.SELECTOR_INPUT_DAILY).on('change', function () {
+            $private.daily = $($private.SELECTOR_INPUT_DAILY).val();
             $private.findOptions({
                 offerId: $private.offerId,
                 from: $($private.SELECTOR_INPUT_FROM).val(),
-                daily: $($private.SELECTOR_INPUT_DIARY).val()
+                daily: $($private.SELECTOR_INPUT_DAILY).val()
             }, function (err, data) {
                 if (err) {
                     alert(err);
