@@ -36,6 +36,7 @@ function findById(req, res) {
     req.query = req.query || {};
     offersDao.retrieveOne({
         forceRefresh: false,
+        orderBy: 'price',
         id: req.params.id,
         from: req.query.from,
         daily: req.query.daily

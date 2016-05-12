@@ -30,7 +30,7 @@ function parseOffers(options, callback) {
  * Filters options within an offer by from AND daily
  * 
  * @param {object} options - specific options (data, from, daily)
- * @param {function} callback - callback method
+ * @param {object} offer - offer to be sorted
  * 
  */
 function filterOptions(options, offer) {
@@ -71,6 +71,33 @@ function filterOptions(options, offer) {
 
 /**
  * 
+ * Order options within an offer by price
+ * 
+ * @param {object} options - specific options (price)
+ * @param {object} offer - offer to be sorted
+ * 
+ */
+function orderOptions(options, offer) {
+    
+    // Cloning offer
+    var orderedOffer = JSON.parse(JSON.stringify(offer));
+    
+    if (options && options.orderBy === 'price') {
+        // Filter by from and daily
+        orderedOffer.options.sort(function(a, b){
+            if (a.price && b.price) {
+                return a.price-b.price;
+            }
+            return -1;
+        });
+    }
+    
+    return orderedOffer;
+    
+}
+
+/**
+ * 
  * Fetches the first offer meeting the criteria
  * 
  * @param {object} options - specific options (id)
@@ -87,7 +114,9 @@ function retrieveOne(options, callback) {
             for (var i=0;i<data.length;i++) {
                 if (options && options.id) {
                     if (data[i].id.toString() === options.id) {
-                        callback(null, filterOptions(options, data[i]));
+                        filteredOffer = filterOptions(options, data[i]);
+                        orderedOffer = orderOptions(options, filteredOffer);
+                        callback(null, orderedOffer);
                         return;
                     }
                 } 
