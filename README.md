@@ -36,13 +36,17 @@ Testes unitários do frontend
 
 ![www-tests.PNG](https://dl.dropboxusercontent.com/u/5368562/desafio-pagina-ofertas/www-tests.PNG)
 
-Testes de carga
+Testes de carga usando loader.io (http://loader.io) no heroku 512mb (https://desafio-pagina-ofertas.herokuapp.com/)
 
-![loadtest.PNG](https://dl.dropboxusercontent.com/u/5368562/desafio-pagina-ofertas/loadtest.PNG)
+![loadtest-loaderio.PNG](https://dl.dropboxusercontent.com/u/5368562/desafio-pagina-ofertas/loadtest-loaderio.PNG)
 
 Página inicializada no chrome com id de oferta 2 (http://localhost/?id=2)
 
 ![localhost-chrome.PNG](https://dl.dropboxusercontent.com/u/5368562/desafio-pagina-ofertas/localhost-chrome.PNG)
+
+Página inicializada no firefox com id de oferta 1 (http://localhost/?id=1)
+
+![localhost-firefox.PNG](https://dl.dropboxusercontent.com/u/5368562/desafio-pagina-ofertas/localhost-firefox.PNG)
 
 Página inicializada no safari com id de oferta 0 (http://localhost/?id=0)
 
