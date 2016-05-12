@@ -36,7 +36,7 @@ Testes de carga
 
 Página inicializada no chrome com id de oferta 2 (http://localhost/?id=2)
 
-![localhost-chrome.PNG](https://dl.dropboxusercontent.com/u/5368562/desafio-pagina-ofertas/localhost.PNG)
+![localhost-chrome.PNG](https://dl.dropboxusercontent.com/u/5368562/desafio-pagina-ofertas/localhost-chrome.PNG)
 
 Página inicializada no safari com id de oferta 0 (http://localhost/)
 
