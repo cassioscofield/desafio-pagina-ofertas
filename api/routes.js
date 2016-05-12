@@ -1,4 +1,4 @@
-var offersController = require('./offersController');
+var offersController = require('./controller-offers');
 
 module.exports = function (app) {
     
@@ -14,7 +14,7 @@ module.exports = function (app) {
 
     app.get('*', function (req, res) {
         var path = require('path');
-        res.sendFile(path.resolve(__dirname, '..') + '/public/index.html');
+        res.sendFile(path.resolve(__dirname, '..') + '/www/index.html');
     });
     
 };

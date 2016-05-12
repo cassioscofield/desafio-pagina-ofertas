@@ -5,7 +5,7 @@ txt = '[{	"id": 0,	"title": "Hotel The Mirage (Hotel & Casino)",	"location": "La
 describe('offersDao\n', function() {
 
     beforeEach(function () {
-        offersDao =  rewire('../api/offersDao');
+        offersDao =  rewire('../api/dao-offers');
     });
     
     describe('retrieveMultiple', function() {

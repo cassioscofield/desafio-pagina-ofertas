@@ -10,7 +10,7 @@ offers = [{}, {}];
 describe('offersController\n', function() {
 
     beforeEach(function () {
-        offersController =  rewire('../api/offersController');
+        offersController =  rewire('../api/controller-offers');
     });
     
     describe('find', function() {
